@@ -13,9 +13,11 @@ public static class NorthwindContextExtensions
   /// <returns>An IServiceCollection that can be used to add more services.</returns>
   public static IServiceCollection AddNorthwindContext(
     this IServiceCollection services,
-    string connectionString = "Data Source=.;Initial Catalog=Northwind;" +
+    //string connectionString = "Data Source=.;Initial Catalog=Northwind;" +
+    //  "Integrated Security=true;TrustServerCertificate=True;MultipleActiveResultsets=true;")
+    string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Northwind;" +
       "Integrated Security=true;TrustServerCertificate=True;MultipleActiveResultsets=true;")
-  {
+    {
     services.AddDbContext<NorthwindContext>(options =>
     {
       options.UseSqlServer(connectionString);

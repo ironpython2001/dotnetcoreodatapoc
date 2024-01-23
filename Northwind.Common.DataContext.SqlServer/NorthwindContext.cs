@@ -51,8 +51,9 @@ namespace Packt.Shared
     {
       if (!optionsBuilder.IsConfigured)
       {
-        optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=True;");
-      }
+                //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=true;TrustServerCertificate=True;");
+            }
 
       optionsBuilder.AddInterceptors(setLastRefreshedInterceptor);
     }
