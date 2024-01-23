@@ -27,6 +27,58 @@
 			"response": []
 		},
 		{
+			"name": "GetAll(top)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7000/odata/Invoices?$top=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"odata",
+						"Invoices"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll(skip & top)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7000/odata/Invoices?$top=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"odata",
+						"Invoices"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GetAll(selected Fields)",
 			"request": {
 				"method": "GET",

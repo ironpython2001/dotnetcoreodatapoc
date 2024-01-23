@@ -12,6 +12,7 @@ where 'Invoices' is the view name
 
 ##### References
 * [Getting Started with ASP.NET Core OData 8 - OData | Microsoft Learn](https://learn.microsoft.com/en-us/odata/webapi-8/getting-started?tabs=net60%2Cvisual-studio-2022%2Cvisual-studio)
+* [Client-driven Paging in ASP.NET Core OData 8 - OData | Microsoft Learn](https://learn.microsoft.com/en-us/odata/webapi-8/fundamentals/client-driven-paging)
 * In Invoice.cs we need to define the property [Key]
 [EntityType: EntitySet ‘[Entity Name]’ is based on type ‘[Entity Name]’ that has no keys defined](https://blog.taditdash.com/entitytype-entityset-entity-name-is-based-on-type-entity-name-that-has-no-keys-defined)
 
