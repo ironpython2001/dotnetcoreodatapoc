@@ -5,21 +5,21 @@ using Microsoft.AspNetCore.OData.Routing.Controllers;
 
 namespace Kestra.CareStationDeviceUsageApi.Controllers;
 
-public class CareStationDeviceUsageController : ODataController
+public class InvoicesController : ODataController
 {
     protected readonly KestraDbContext db;
-    public CareStationDeviceUsageController(KestraDbContext db)
+    public InvoicesController(KestraDbContext db)
     {
         this.db = db;
     }
 
-    //[EnableQuery()]
-    //public IActionResult GetAll()
-    //{
-    //    return Ok(db.Invoices);
-    //}
+    [EnableQuery()]
+    public ActionResult<IEnumerable<Invoice>> Get()
+    {
+        return Ok(db.Invoices);
+    }
     [EnableQuery]
-    public IActionResult Get([FromRoute] string key)
+    public ActionResult<Invoice> Get([FromRoute] string key)
     {
         if (string.IsNullOrEmpty(key))
         {

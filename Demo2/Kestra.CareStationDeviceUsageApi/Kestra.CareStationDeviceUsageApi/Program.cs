@@ -13,13 +13,13 @@ builder.Services.AddKestraDBContext(builder.Configuration);
 builder.Services.AddControllers()
     .AddOData(options => options
     // register OData models
-    .AddRouteComponents(routePrefix: "CareStationDeviceUsage", model: GetEdmModelForCareStationDeviceUsage())
+    .AddRouteComponents(routePrefix: "odata", model: GetEdmModelForCareStationDeviceUsage())
     // enable query options
     .Select() // enable $select for projection
     .Expand() // enable $expand to navigate to related entities
     .Filter() // enable $filter
     .OrderBy() // enable $orderby
-    .SetMaxTop(100) // enable $top
+    .SetMaxTop(null) // enable $top
     .Count() // enable $count
   );
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -48,6 +48,6 @@ app.Run();
 IEdmModel GetEdmModelForCareStationDeviceUsage()
 {
     ODataConventionModelBuilder builder = new();
-    builder.EntitySet<Invoice>("CareStationDeviceUsage");
+    builder.EntitySet<Invoice>("Invoices");
     return builder.GetEdmModel();
 }
