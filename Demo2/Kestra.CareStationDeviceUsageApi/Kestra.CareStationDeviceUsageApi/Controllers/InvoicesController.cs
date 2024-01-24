@@ -21,14 +21,7 @@ public class InvoicesController : ODataController
     [EnableQuery]
     public ActionResult<Invoice> Get([FromRoute] string key)
     {
-        if (string.IsNullOrEmpty(key))
-        {
-            return Ok(db.Invoices);
-        }
-        else
-        {
-            return Ok(db.Invoices.Where(i => i.ShipName == key));
-        }
+        return Ok(db.Invoices.Where(i => i.ShipName == key));
     }
 
 }
